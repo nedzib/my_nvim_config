@@ -10,16 +10,15 @@ return require('packer').startup(function(use)
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+      requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use({
-	  'sainnhe/everforest',
-	  as = 'everforest',
-	  config = function()
-          vim.g.everforest_background = 'hard'
-		  vim.cmd('colorscheme everforest')
-	  end
+      'luisiacc/gruvbox-baby',
+      as = 'gruvbox-baby',
+      config = function()
+          vim.cmd('colorscheme gruvbox-baby')
+      end
   })
 
   use({
@@ -87,6 +86,7 @@ return require('packer').startup(function(use)
   use('prichrd/netrw.nvim')
   use('ingydotnet/yaml-vim')
   use('tpope/vim-fugitive')
+  use("mhinz/vim-signify")
   --Temas
   use('sainnhe/everforest')
   --
