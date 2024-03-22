@@ -1,10 +1,10 @@
 
-vim.g.floaterm_width = 0.99
-vim.g.floaterm_height = 0.4
-vim.g.floaterm_position = 'bottom'
+vim.g.floaterm_width = 0.4
+vim.g.floaterm_height = 0.989
+vim.g.floaterm_position = 'topright'
 vim.g.floaterm_borderchars = '═║═║╔╗╝╚'
-vim.g.floaterm_titleposition = 'center'
-vim.g.floaterm_title = '═━ 󰆍 $1/$2 󰆍 ━═'
+vim.g.floaterm_titleposition = 'right'
+vim.g.floaterm_title = '━ 󰆍 $1/$2 ━'
 
 vim.api.nvim_set_keymap('n', '<leader>fv', ':lua floaterm_update(0.4, 0.989, "topright")<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fh', ':lua floaterm_update(0.99, 0.4, "bottom")<CR>', {noremap = true, silent = true})

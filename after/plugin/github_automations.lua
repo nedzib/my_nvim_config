@@ -13,11 +13,7 @@ end
 
 function open_github_commit()
     local github_url = get_remote_url() .. '/commit/' .. get_git_commit()
-    if is_wsl() then
-        vim.fn.jobstart("cmd.exe /c start " .. github_url)
-    else
-        vim.fn.jobstart({'xdg-open', github_url})
-    end
+    vim.fn.jobstart({'xdg-open', github_url})
 end
 
 function is_wsl()
