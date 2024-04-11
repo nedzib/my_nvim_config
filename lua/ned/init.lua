@@ -75,3 +75,6 @@ require('fine-cmdline').setup({
 vim.api.nvim_set_keymap('n', '<leader>df', ':DiffviewOpen<CR><C-W>w:syncbind<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>dc', ':DiffviewClose<CR>', { noremap = true, silent = true })
 
+vim.opt.cmdheight = 0
+vim.cmd 'highlight Pmenu guibg=NONE'
+
