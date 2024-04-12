@@ -78,3 +78,6 @@ vim.api.nvim_set_keymap('n', '<leader>dc', ':DiffviewClose<CR>', { noremap = tru
 vim.opt.cmdheight = 0
 vim.cmd 'highlight Pmenu guibg=NONE'
 
+
+vim.g.indentLine_char = '┊'
+

@@ -85,6 +85,7 @@ return require('packer').startup(function(use)
       use('ingydotnet/yaml-vim')
       use('tpope/vim-fugitive')
       use("mhinz/vim-signify")
+      use('Yggdroot/indentLine')
       use('nvim-lualine/lualine.nvim')
 
       use {
