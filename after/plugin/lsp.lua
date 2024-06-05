@@ -3,11 +3,20 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
-  'rubocop',
-  'solargraph',
-  'eslint',
+    'rubocop',
+    'ruby_lsp',
+})
+
+-- Configuración específica para ruby-lsp
+lsp.configure("ruby-lsp", {
+  cmd = {vim.fn.stdpath("data") .. "/mason/bin/ruby-lsp"},
+  filetypes = {"ruby"},
+  root_dir = function(fname)
+    return require("lspconfig").util.find_git_ancestor(fname) or vim.fn.getcwd()
+  end,
+  on_attach = function(client, bufnr)
+    -- Configuración adicional para cuando el servidor LSP se adjunte al buffer
+  end,
 })
 
 -- Fix Undefined global 'vim'

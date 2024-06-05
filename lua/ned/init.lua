@@ -61,23 +61,13 @@ vim.g.blamer_prefix = ' ::: '
 require('lualine').setup()
 
 vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
-
-require('fine-cmdline').setup({
-  popup = {
-    position = {
-      row = '50%',
-      col = '50%',
-    },
-  },
-})
+vim.opt.cmdheight = 0
 
 -- Remapeo para abrir Diffview, cambiar de ventana y ejecutar syncbind
 vim.api.nvim_set_keymap('n', '<leader>df', ':DiffviewOpen<CR><C-W>w:syncbind<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>dc', ':DiffviewClose<CR>', { noremap = true, silent = true })
 
-vim.opt.cmdheight = 0
 vim.cmd 'highlight Pmenu guibg=NONE'
 
-
 vim.g.indentLine_char = '┊'
-
+vim.g.rainbow_active = 1

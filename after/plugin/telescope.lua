@@ -6,3 +6,18 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>', { noremap = true, silent = true })
+
+
+require('telescope').setup {
+    defaults = {
+        borderchars = {
+            prompt = {'─', '│',  '─', '│', '╭', '╮', '╯', '╰'},
+            results = {'─', '│',  '─', '│', '╭', '╮', '╯', '╰'},
+            preview = {'─', '│',  '─', '│', '╭', '╮', '╯', '╰'}
+        },
+        color_devicons = true,
+        prompt_prefix = " ",
+        selection_caret = "󱝂 ",
+    },
+}
+

@@ -7,22 +7,27 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Telescope
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-	  -- or                            , branch = '0.1.x',
-      requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-ui-select.nvim' },
+    config = function()
+      require('telescope')
+    end
   }
 
   use({
-      'luisiacc/gruvbox-baby',
-      as = 'gruvbox-baby',
+      'Mofiqul/dracula.nvim',
+      as = 'dracula',
       config = function()
-          vim.cmd('colorscheme gruvbox-baby')
+          vim.cmd('colorscheme dracula')
       end
   })
 
   use({
-      "folke/trouble.nvim",
+      'folke/trouble.nvim',
       config = function()
           require("trouble").setup {
               icons = false,
@@ -73,11 +78,11 @@ return require('packer').startup(function(use)
       use("github/copilot.vim")
       -- Ned cosas
       use('jiangmiao/auto-pairs')
-      use('powerline/powerline')
       use('tpope/vim-endwise')
       use('tpope/vim-rails')
-      use('voldikss/vim-floaterm')
-      use('frazrepo/vim-rainbow')
+      use('tpope/vim-surround')
+      use('tpope/vim-commentary')
+      use('luochen1990/rainbow')
       use('APZelos/blamer.nvim')
       use('godlygeek/csapprox')
       use('nvim-tree/nvim-web-devicons')
@@ -87,6 +92,18 @@ return require('packer').startup(function(use)
       use("mhinz/vim-signify")
       use('Yggdroot/indentLine')
       use('nvim-lualine/lualine.nvim')
+      use('nvim-tree/nvim-tree.lua')
+      use('sindrets/diffview.nvim')
+      use('hrsh7th/cmp-cmdline')
+      use('onsails/lspkind.nvim')
+
+      -- lua
+      use {
+          'linrongbin16/lsp-progress.nvim',
+          config = function()
+              require('lsp-progress').setup()
+          end
+      }
 
       use {
           'VonHeikemen/fine-cmdline.nvim',
@@ -94,10 +111,19 @@ return require('packer').startup(function(use)
               {'MunifTanjim/nui.nvim'}
           }
       }
-      use 'romgrk/barbar.nvim'
-      use 'sindrets/diffview.nvim'
-      --Temas
-      use('sainnhe/everforest')
-      --
+      use {
+          'goolord/alpha-nvim',
+          requires = { 'nvim-tree/nvim-web-devicons' },
+          config = function ()
+              require'alpha'.setup(require'alpha.themes.startify'.config)
+          end
+      }
+
+      use({
+          "stevearc/aerial.nvim",
+          config = function()
+              require("aerial").setup()
+          end,
+      })
   end)
 
