@@ -34,10 +34,6 @@ autocmd({"BufEnter"}, {
     command = 'setlocal syntax=yaml'
 })
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-
 vim.cmd([[
   set clipboard=unnamedplus
   set encoding=UTF-8
@@ -58,8 +54,6 @@ vim.g.clipboard = {
 vim.g.blamer_enabled = true
 vim.g.blamer_prefix = ' ::: '
 
-require('lualine').setup()
-
 vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
 vim.opt.cmdheight = 0
 
@@ -67,7 +61,14 @@ vim.opt.cmdheight = 0
 vim.api.nvim_set_keymap('n', '<leader>df', ':DiffviewOpen<CR><C-W>w:syncbind<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>dc', ':DiffviewClose<CR>', { noremap = true, silent = true })
 
-vim.cmd 'highlight Pmenu guibg=NONE'
+vim.cmd[[
+hi Pmenu guibg=NONE guifg=#fbf1c7
+hi PmenuSel guibg=#44475A guifg=#fbf1c7
+hi Visual guibg=#44475A guifg=#fbf1c7
+hi Search guibg=#44475A guifg=#fbf1c7
+hi IncSearch guibg=#44475A guifg=#fbf1c7
+hi CursorLineNr guifg=#FABD2F
+]]
 
 vim.g.indentLine_char = '┊'
 vim.g.rainbow_active = 1

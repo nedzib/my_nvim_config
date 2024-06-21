@@ -1,7 +1,5 @@
-vim.g.netrw_winsize = 25
-
 vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.o.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

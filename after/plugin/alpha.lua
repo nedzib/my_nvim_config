@@ -1,11 +1,3 @@
-vim.g.startup_bookmarks = {
-  ["Q"] = '~/.config/qtile/config.py',
-  ["I"] = '~/.config/nvim/init.lua',
-  ["F"] = '~/.config/fish/config.fish',
-  ["K"] = '~/.config/kitty/kitty.conf',
-  ["A"] = '~/.config/alacritty/alacritty.yml',
-}
-
 local alpha = require("alpha")
 local dashboard = require("alpha.themes.startify")
 

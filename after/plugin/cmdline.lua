@@ -19,15 +19,4 @@ require('fine-cmdline').setup({
       winhighlight = 'Normal:Normal,FloatBorder:none',
     },
   },
-  hooks = {
-    before_mount = function(input)
-      -- code
-    end,
-    after_mount = function(input)
-      -- code
-    end,
-    set_keymaps = function(imap, feedkeys)
-      -- code
-    end
-  }
 })

@@ -17,15 +17,13 @@ end
 
 function open_github_commit()
     local github_url = get_remote_url() .. '/commit/' .. get_git_commit()
-    print(github_url)
-    vim.fn.jobstart({'xdg-open', github_url})
+    vim.fn.jobstart({'wslview', github_url})
 end
 
 function ssh_to_http(url)
     local http_url = url:gsub("git@github.com:", "https://github.com/")
     return http_url:gsub("%.git$", "")
 end
-
 
 function is_ssh_url(url)
     if url:match("^git@") then
@@ -36,3 +34,4 @@ function is_ssh_url(url)
 end
 
 vim.api.nvim_set_keymap('n', '<leader>gc', ':lua open_github_commit()<CR>', {noremap = true, silent = true})
+
